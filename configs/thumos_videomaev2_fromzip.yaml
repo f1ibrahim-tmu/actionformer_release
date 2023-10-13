@@ -3,7 +3,7 @@ train_split: ['validation']
 val_split: ['test']
 dataset: {
   json_file: ./data/thumos/annotations/thumos14.json,
-  feat_folder: ./data/thumos/th14_vit_g_16_4-actionformer-subset/,
+  feat_folder: ./data/thumos/th14_mae_g_16_4-from-zip,
   file_prefix: ~,
   file_ext: .npy,
   num_classes: 20,
