@@ -9,8 +9,8 @@ from torch.nn import functional as F
 from .datasets import register_dataset
 from .data_utils import truncate_feats
 
-@register_dataset("thumos")
-class THUMOS14Dataset(Dataset):
+@register_dataset("i5O")
+class i5ODataset(Dataset):
     def __init__(
         self,
         is_training,     # if in training mode
@@ -66,7 +66,7 @@ class THUMOS14Dataset(Dataset):
 
         # dataset specific attributes
         self.db_attributes = {
-            'dataset_name': 'thumos-14',
+            'dataset_name': 'i5O',
             'tiou_thresholds': np.linspace(0.3, 0.7, 5),
             # we will mask out cliff diving
             'empty_label_ids': [],
@@ -115,9 +115,7 @@ class THUMOS14Dataset(Dataset):
                 duration = 1e8
 
             # get annotations if available
-            if ('annotations' in value) and (len(value['annotations']) > 0):
-                # a fun fact of THUMOS: cliffdiving (4) is a subset of diving (7)
-                # our code can now handle this corner case
+            if ('annotations' in value) and (len(value['annotations']) > 0): 
                 segments, labels = [], []
                 for act in value['annotations']:
                     segments.append(act['segment'])
@@ -185,4 +183,3 @@ class THUMOS14Dataset(Dataset):
             )
 
         return data_dict
-
