@@ -67,7 +67,7 @@ class i5ODataset(Dataset):
         # dataset specific attributes
         self.db_attributes = {
             'dataset_name': 'i5O',
-            'tiou_thresholds': np.linspace(0.3, 0.7, 5),
+            'tiou_thresholds': np.linspace(0.1, 0.7, 7),
             # we will mask out cliff diving
             'empty_label_ids': [],
         }
