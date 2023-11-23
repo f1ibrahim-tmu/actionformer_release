@@ -2,8 +2,8 @@ dataset_name: thumos
 train_split: ['validation']
 val_split: ['test']
 dataset: {
-  json_file: ./data/thumos/annotations/thumos14.json,
-  feat_folder: ./data/thumos/th14_vit_g_16_4-actionformer-subset,
+  json_file: ./data/thumos_internvideo/annotations/thumos14.json,
+  feat_folder: ./data/thumos_internvideo/th14_mae_hugek700_16_4,
   file_prefix: ~,
   file_ext: .npy,
   num_classes: 20,
