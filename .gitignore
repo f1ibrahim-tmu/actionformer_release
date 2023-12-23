@@ -1,3 +1,7 @@
+include/
+lib64/
+lib/
+pretrained/
 venv_ActionFormer/
 *.pyc
 # don't commit the data:
