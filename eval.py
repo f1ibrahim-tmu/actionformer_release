@@ -102,7 +102,7 @@ def main(args):
         print_freq=args.print_freq
     )
     end = time.time()
-    print("All done! Total time: {:0.2f} sec".format(end - start))
+    print("All done! Total Inference time: {:0.2f} sec".format(end - start))
     return
 
 ################################################################################
