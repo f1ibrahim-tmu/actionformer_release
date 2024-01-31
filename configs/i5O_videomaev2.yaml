@@ -40,6 +40,7 @@ test_cfg: {
   pre_nms_topk: 2000,
   max_seg_num: 200,
   min_score: 0.001,
+  # Test commit
   # when using external scores, our model is generating "proposals"
   # multiclass_nms: False,
   # ext_score_file: ./data/thumos/annotations/thumos14_cls_scores.pkl,
