@@ -10,7 +10,7 @@ import torch
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
 import torch.utils.data
-from torchprofile import profile_macs, profile_flops
+# from torchprofile import profile_macs, profile_flops
 
 # our code
 from libs.core import load_config
@@ -104,11 +104,11 @@ def main(args):
     )
     end = time.time()
     print("All done! Total Inference time: {:0.2f} sec".format(end - start))
-    macs = profile_macs(model, val_loader)
-    flops = profile_flops(model, val_loader)
+    # macs = profile_macs(model, val_loader)
+    # flops = profile_flops(model, val_loader)
 
-    print(f"MACs: {macs}")
-    print(f"FLOPs: {flops}")
+    # print(f"MACs: {macs}")
+    # print(f"FLOPs: {flops}")
 
     return
 
