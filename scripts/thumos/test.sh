@@ -1,0 +1,1 @@
+python ./eval.py ./configs/thumos_i3d.yaml ./ckpt/thumos_i3d_reproduce
