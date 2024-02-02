@@ -1,1 +1,1 @@
-python ./eval.py ./configs/thumos_i3d.yaml ./ckpt/thumos_i3d_reproduce
+python ./eval.py ./configs/thumos_videomaev2.yaml ./ckpt/thumos_videomaev2_reproduce
