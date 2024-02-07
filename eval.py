@@ -11,6 +11,7 @@ import torch.nn as nn
 import torch.backends.cudnn as cudnn
 import torch.utils.data
 from thop import profile
+from thop import clever_format
 
 # our code
 from libs.core import load_config
@@ -109,10 +110,11 @@ def main(args):
     input_tensor = torch.randn(1, 3, 512, 1408)  # Example shape, adjust as needed
 
     # Profile the model
-    flops, params = profile(model, inputs=(input_tensor,))
+    macs, params = clever_format([macs, params], "%.3f")
 
     # Print the FLOPs
-    print("FLOPs:", flops) 
+    print("MACs:", macs) 
+    print("PARAMs:", params) 
 
     return
 
