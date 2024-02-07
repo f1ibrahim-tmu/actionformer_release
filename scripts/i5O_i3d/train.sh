@@ -1,1 +1,1 @@
-python ./train.py ./configs/i5O_videomaev2.yaml --output reproduce
+python ./train.py ./configs/i5O_i3d_rgb.yaml --output reproduce

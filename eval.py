@@ -10,7 +10,7 @@ import torch
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
 import torch.utils.data
-# from torchprofile import profile_macs, profile_flops
+import torchprofile
 
 # our code
 from libs.core import load_config
@@ -104,11 +104,15 @@ def main(args):
     )
     end = time.time()
     print("All done! Total Inference time: {:0.2f} sec".format(end - start))
-    # macs = profile_macs(model, val_loader)
-    # flops = profile_flops(model, val_loader)
 
-    # print(f"MACs: {macs}")
-    # print(f"FLOPs: {flops}")
+    # Create a random input tensor with the desired shape
+    input_tensor = torch.randn(1, 3, 512, 1408)  # Example shape, adjust as needed
+
+    # Profile the model
+    profile = torchprofile.Profile(model, input_tensor=input_tensor)
+    # Print the FLOPs and MACs
+    print("FLOPs:", profile.total_float_ops)
+    print("MACs:", profile.total_mac_ops)
 
     return
 

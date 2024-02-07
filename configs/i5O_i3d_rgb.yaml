@@ -2,8 +2,8 @@ dataset_name: i5O
 train_split: ['validation']
 val_split: ['test']
 dataset: {
-  json_file: /data/i5O/i5OData/annotations/i5Oannotations_i3d_rgb.json,
-  feat_folder: /data/i5O/i5OData/ActionFormer-features/features_videomaev2/,
+  json_file: /data/fady/aar/video_features/annotations/i5Oannotations_i3d_rgb.json,
+  feat_folder: /data/fady/aar/TemporalMaxer/data/i5O/i3d,
   file_prefix: ~,
   file_ext: .npy,
   num_classes: 20, # i5O has 20 classes
