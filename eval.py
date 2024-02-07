@@ -10,7 +10,7 @@ import torch
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
 import torch.utils.data
-import torchprofile
+from thop import profile
 
 # our code
 from libs.core import load_config
@@ -109,10 +109,10 @@ def main(args):
     input_tensor = torch.randn(1, 3, 512, 1408)  # Example shape, adjust as needed
 
     # Profile the model
-    profile = torchprofile.Profile(model, input_tensor=input_tensor)
-    # Print the FLOPs and MACs
-    print("FLOPs:", profile.total_float_ops)
-    print("MACs:", profile.total_mac_ops)
+    flops, params = profile(model, inputs=(input_tensor,))
+
+    # Print the FLOPs
+    print("FLOPs:", flops) 
 
     return
 
