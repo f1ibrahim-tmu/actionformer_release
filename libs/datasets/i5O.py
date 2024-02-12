@@ -97,6 +97,7 @@ class i5ODataset(Dataset):
             # or does not have the feature file
             feat_file = os.path.join(self.feat_folder,
                                      self.file_prefix + key + self.file_ext)
+            print(feat_file)
             if not os.path.exists(feat_file):
                 continue
 

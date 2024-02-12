@@ -3,9 +3,9 @@ train_split: ['validation']
 val_split: ['test']
 dataset: {
   json_file: /data/fady/aar/video_features/annotations/i5Oannotations_i3d_rgb.json,
-  feat_folder: /data/fady/aar/TemporalMaxer/data/i5O/i3d,
+  feat_folder: /data/fady/aar/TemporalMaxer/data/i5O/i3d/,
   file_prefix: ~,
-  file_ext: _rgb.npy,
+  file_ext: rgb.npy,
   num_classes: 20, # i5O has 20 classes
   input_dim: 1024,
   feat_stride: 4,
