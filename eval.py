@@ -10,8 +10,8 @@ import torch
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
 import torch.utils.data
-from thop import profile
-from thop import clever_format
+from ptflops import get_model_complexity_info
+import re
 
 # our code
 from libs.core import load_config
@@ -106,15 +106,17 @@ def main(args):
     end = time.time()
     print("All done! Total Inference time: {:0.2f} sec".format(end - start))
 
-    # Create a random input tensor with the desired shape
-    input_tensor = torch.randn(1, 3, 512, 1408)  # Example shape, adjust as needed
+    #Model thats already available
+    macs, params = get_model_complexity_info(model, (3, 224, 224), as_strings=True,
+    print_per_layer_stat=True, verbose=True)
+    # Extract the numerical value
+    flops = eval(re.findall(r'([\d.]+)', macs)[0])*2
+    # Extract the unit
+    flops_unit = re.findall(r'([A-Za-z]+)', macs)[0][0]
 
-    # Profile the model
-    macs, params = clever_format([macs, params], "%.3f")
-
-    # Print the FLOPs
-    print("MACs:", macs) 
-    print("PARAMs:", params) 
+    print('Computational complexity: {:<8}'.format(macs))
+    print('Computational complexity: {} {}Flops'.format(flops, flops_unit))
+    print('Number of parameters: {:<8}'.format(params))
 
     return
 
