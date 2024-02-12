@@ -107,7 +107,7 @@ def main(args):
     print("All done! Total Inference time: {:0.2f} sec".format(end - start))
 
     #Model thats already available
-    macs, params = get_model_complexity_info(model, (3, 224, 224), as_strings=True,
+    macs, params = get_model_complexity_info(model, (224, 224), as_strings=True,
     print_per_layer_stat=True, verbose=True)
     # Extract the numerical value
     flops = eval(re.findall(r'([\d.]+)', macs)[0])*2
