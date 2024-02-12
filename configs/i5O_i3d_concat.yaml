@@ -5,7 +5,7 @@ dataset: {
   json_file: /data/i5O/i5OData/annotations/i5Oannotations_i3d_concat.json,
   feat_folder: /data/i5O/i5OData/ActionFormer-features/features_videomaev2/,
   file_prefix: ~,
-  file_ext: .npy,
+  file_ext: _concat.npy,
   num_classes: 20, # i5O has 20 classes
   input_dim: 1408,
   feat_stride: 4,

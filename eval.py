@@ -106,17 +106,17 @@ def main(args):
     end = time.time()
     print("All done! Total Inference time: {:0.2f} sec".format(end - start))
 
-    #Model thats already available
-    macs, params = get_model_complexity_info(model, (224, 224), as_strings=True,
-    print_per_layer_stat=True, verbose=True)
-    # Extract the numerical value
-    flops = eval(re.findall(r'([\d.]+)', macs)[0])*2
-    # Extract the unit
-    flops_unit = re.findall(r'([A-Za-z]+)', macs)[0][0]
+    # #Model thats already available
+    # macs, params = get_model_complexity_info(model, (1408), as_strings=True,
+    # print_per_layer_stat=True, verbose=True)
+    # # Extract the numerical value
+    # flops = eval(re.findall(r'([\d.]+)', macs)[0])*2
+    # # Extract the unit
+    # flops_unit = re.findall(r'([A-Za-z]+)', macs)[0][0]
 
-    print('Computational complexity: {:<8}'.format(macs))
-    print('Computational complexity: {} {}Flops'.format(flops, flops_unit))
-    print('Number of parameters: {:<8}'.format(params))
+    # print('Computational complexity: {:<8}'.format(macs))
+    # print('Computational complexity: {} {}Flops'.format(flops, flops_unit))
+    # print('Number of parameters: {:<8}'.format(params))
 
     return
 
