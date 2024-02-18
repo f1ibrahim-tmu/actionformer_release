@@ -1,0 +1,1 @@
+python ./train.py ./configs/i5O_r21d_rgb.yaml --output reproduce
