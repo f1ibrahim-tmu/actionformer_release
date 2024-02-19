@@ -1,4 +1,5 @@
 dataset_name: i5O
+devices: ['cuda:0']
 train_split: ['validation']
 val_split: ['test']
 dataset: {
@@ -26,7 +27,8 @@ opt: {
   weight_decay: 0.05,
 }
 loader: {
-  batch_size: 2,
+  batch_size: 32,
+  num_workers: 8,
 }
 train_cfg: {
   init_loss_norm: 100,
