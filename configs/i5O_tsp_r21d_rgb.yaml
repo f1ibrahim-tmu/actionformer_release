@@ -4,11 +4,11 @@ train_split: ['validation']
 val_split: ['test']
 dataset: {
   json_file: /data/fady/aar/video_features/annotations/i5Oannotations_r21d_rgb.json,
-  feat_folder: /data/i5O/i5OData_30fps/TSP_features/r2plus1d_34-tsp_on_thumos14_features/stride_16,
+  feat_folder: /data/i5O/i5OData_30fps/TSP_features/r2plus1d_34-tsp_on_thumos14_features/stride_16/,
   file_prefix: ~,
-  file_ext: .pkl,
+  file_ext: .npy,
   num_classes: 20, # i5O has 20 classes
-  input_dim: 1024,
+  input_dim: 512,
   feat_stride: 4,
   num_frames: 16,
   # serve as data augmentation
